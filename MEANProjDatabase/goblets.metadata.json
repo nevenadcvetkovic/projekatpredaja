@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"MEANProjDatabase.goblets"}],"uuid":"1805d759d2e3466ca5ed9e7775ab72e0"}

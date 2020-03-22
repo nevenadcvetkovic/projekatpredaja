@@ -1,0 +1,331 @@
+<div class="left-content-center">
+    <a [routerLink]="" (click)="home()">Home</a>
+</div>
+<div class="left-content-center">
+    <a [routerLink]="" (click)="onLogout()">Logout</a>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <!-- form card register -->
+        <div class="card-body">
+            <form [formGroup]="gobletForm" (ngSubmit)="onSubmit()">
+                <table class="table table-sm table-borderless">
+                    <tr>
+                        <td colspan="27">
+                            <h1>Pehar</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="13">
+                            <span *ngIf="areVisible[12]">
+                                <label>{{goblet.tQuestion7}}</label>
+                            </span></td>
+                        <td colspan="13" class="border-black">
+                            <input id="tAnswer7i" class="col-md-12" formControlName="tAnswer7" *ngIf="areVisible[12]">
+                            <output id="tAnswer7o" class="col-md-12" *ngIf="!areVisible[12]"
+                                [className]="condition[12]==3 ? 'col-md-12 bg-success':condition[12]==1 ? 'col-md-12 bg-warning': condition[12]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[12]}}</output>
+                        </td>
+                        <td>
+                            <span class="edit" *ngIf="areVisible[12]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(13)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14">
+                            <span *ngIf="areVisible[11]">
+                                <label class="form-label-lg">{{goblet.tQuestion6}}</label>
+                            </span>
+                        </td>
+                        <td colspan="11" class="border-black">
+                            <input id="tAnswer6i" class="col-md-12" formControlName="tAnswer6" *ngIf="areVisible[11]">
+                            <output id="tAnswer6o" class="col-md-12" *ngIf="!areVisible[11]"
+                                [className]="condition[11]==3 ? 'col-md-12 bg-success':condition[11]==1 ? 'col-md-12 bg-warning': condition[11]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[11]}}</output>
+                        </td>
+                        <td colspan="2">
+                            <span class="edit" *ngIf="areVisible[11]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(12)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="15">
+                            <span *ngIf="areVisible[10]">
+                                <label class="form-label-lg">{{goblet.tQuestion5}}</label>
+                            </span>
+                        </td>
+                        <td colspan="9" class="border-black">
+                            <input id="tAnswer5i" class="col-md-12" formControlName="tAnswer5" *ngIf="areVisible[10]">
+                            <output id="tAnswer5o" class="col-md-12" *ngIf="!areVisible[10]"
+                                [className]="condition[10]==3 ? 'col-md-12 bg-success':condition[10]==1 ? 'col-md-12 bg-warning': condition[10]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[10]}}</output>
+                        </td>
+                        <td colspan="3">
+                            <span class="edit" *ngIf="areVisible[10]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(11)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="16">
+                            <span *ngIf="areVisible[9]">
+                                <label class="form-label-lg">{{goblet.tQuestion4}}</label>
+                            </span>
+                        </td>
+                        <td colspan="7" class="border-black">
+                            <input id="tAnswer4i" class="col-md-12" formControlName="tAnswer4" *ngIf="areVisible[9]">
+                            <output id="tAnswer4o" class="col-md-12" *ngIf="!areVisible[9]"
+                                [className]="condition[9]==3 ? 'col-md-12 bg-success':condition[9]==1 ? 'col-md-12 bg-warning': condition[9]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[9]}}</output>
+                        </td>
+                        <td colspan="4">
+                            <span class="edit" *ngIf="areVisible[9]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(10)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="17">
+                            <span *ngIf="areVisible[8]">
+                                <label class="form-label-lg">{{goblet.tQuestion3}}</label>
+                            </span>
+                        </td>
+                        <td colspan="5" class="border-black">
+                            <input id="tAnswer3i" class="col-md-12" formControlName="tAnswer3" *ngIf="areVisible[8]">
+                            <output id="tAnswer3o" class="col-md-12" *ngIf="!areVisible[8]"
+                                [className]="condition[8]==3 ? 'col-md-12 bg-success' : condition[8]==1 ? 'col-md-12 bg-warning': condition[8]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[8]}}</output>
+                        </td>
+                        <td colspan="5">
+                            <span class="edit" *ngIf="areVisible[8]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(9)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="18">
+                            <span *ngIf="areVisible[7]">
+                                <label class="form-label-lg">{{goblet.tQuestion2}}</label>
+                            </span>
+                        </td>
+                        <td colspan="3" class="border-black">
+                            <input id="tAnswer2i" class="col-md-12" formControlName="tAnswer2" *ngIf="areVisible[7]">
+                            <output id="tAnswer2o" class="col-md-12" *ngIf="!areVisible[7]"
+                                [className]="condition[7]==3 ? 'col-md-12 bg-success' : condition[7]==1 ? 'col-md-12 bg-warning': condition[7]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[7]}}</output>
+                        </td>
+                        <td colspan="6">
+                            <span class="edit" *ngIf="areVisible[7]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(8)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="19">
+                            <span *ngIf="areVisible[6]">
+                                <label class="form-label-lg">{{goblet.tQuestion1}}</label>
+                            </span>
+                        </td>
+                        <td colspan="1" class="border-black">
+                            <input id="tAnswer1i" class="col-md-12" formControlName="tAnswer1" *ngIf="areVisible[6]">
+                            <output id="tAnswer1o" class="col-md-12" *ngIf="!areVisible[6]"
+                                [className]="condition[6]==3 ? 'col-md-12 bg-success' : condition[6]==1 ? 'col-md-12 bg-warning': condition[6]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[6]}}</output>
+                        </td>
+                        <td colspan="7">
+                            <span class="edit" *ngIf="areVisible[6]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(7)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="18">
+                            <span *ngIf="areVisible[5]">
+                                <label class="form-label-lg">{{goblet.bQuestion2}}</label>
+                            </span>
+                        </td>
+                        <td colspan="3" class="border-black">
+                            <input id="bAnswer2i" class="col-md-12" formControlName="bAnswer2" *ngIf="areVisible[5]">
+                            <output id="bAnswer2o" class="col-md-12" *ngIf="!areVisible[5]"
+                                [className]="condition[5]==3 ? 'col-md-12 bg-success' : condition[5]==1 ? 'col-md-12 bg-warning': condition[5]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[5]}}</output>
+                        </td>
+                        <td colspan="6">
+                            <span class="edit" *ngIf="areVisible[5]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(6)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="17">
+                            <span *ngIf="areVisible[4]">
+                                <label class="form-label-lg">{{goblet.bQuestion3}}</label>
+                            </span>
+                        </td>
+                        <td colspan="5" class="border-black">
+                            <input id="bAnswer3i" class="col-md-12" formControlName="bAnswer3" *ngIf="areVisible[4]">
+                            <output id="bAnswer3o" class="col-md-12" *ngIf="!areVisible[4]"
+                                [className]="condition[4]==3 ? 'col-md-12 bg-success' : condition[4]==1 ? 'col-md-12 bg-warning': condition[4]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[4]}}</output>
+                        </td>
+                        <td colspan="5">
+                            <span class="edit" *ngIf="areVisible[4]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(5)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="16">
+                            <span *ngIf="areVisible[3]">
+                                <label class="form-label-lg">{{goblet.bQuestion4}}</label>
+                            </span>
+                        </td>
+                        <td colspan="7" class="border-black">
+                            <input id="bAnswer4i" class="col-md-12" formControlName="bAnswer4" *ngIf="areVisible[3]">
+                            <output id="bAnswer4o" class="col-md-12" *ngIf="!areVisible[3]"
+                                [className]="condition[3]==3 ? 'col-md-12 bg-success' : condition[3]==1 ? 'col-md-12 bg-warning': condition[3]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[3]}}</output>
+                        </td>
+                        <td colspan="4">
+                            <span class="edit" *ngIf="areVisible[3]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(4)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="15">
+                            <span *ngIf="areVisible[2]">
+                                <label class="form-label-lg">{{goblet.bQuestion5}}</label>
+                            </span>
+                        </td>
+                        <td colspan="9" class="border-black">
+                            <input id="bAnswer5i" class="col-md-12" formControlName="bAnswer5" *ngIf="areVisible[2]">
+                            <output id="bAnswer5o" class="col-md-12" *ngIf="!areVisible[2]"
+                                [className]="condition[2]==3 ? 'col-md-12 bg-success' : condition[2]==1 ? 'col-md-12 bg-warning': condition[2]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[2]}}</output>
+                        </td>
+                        <td colspan="3">
+                            <span class="edit" *ngIf="areVisible[2]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(3)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14">
+                            <span *ngIf="areVisible[1]">
+                                <label class="form-label-lg">{{goblet.bQuestion6}}</label>
+                            </span>
+                        </td>
+                        <td colspan="11" class="border-black">
+                            <input id="bAnswer6i" class="col-md-12" formControlName="bAnswer6" *ngIf="areVisible[1]">
+                            <output id="bAnswer6o" class="col-md-12" *ngIf="!areVisible[1]"
+                                [className]="condition[1]==3 ? 'col-md-12 bg-success' : condition[1]==1 ? 'col-md-12 bg-warning': condition[1]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[1]}}</output>
+                        </td>
+                        <td colspan="2">
+                            <span class="edit" *ngIf="areVisible[1]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(2)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="13">
+                            <span *ngIf="areVisible[0]">
+                                <label class="form-label-lg">{{goblet.bQuestion7}}</label>
+                            </span>
+                        </td>
+                        <td colspan="13" class="border-black">
+                            <input id="bAnswer7i" class="col-md-12" formControlName="bAnswer7" *ngIf="areVisible[0]">
+                            <output id="bAnswer7o" class="col-md-12" *ngIf="!areVisible[0]"
+                                [className]="condition[0]==3 ? 'col-md-12 bg-success' : condition[0]==1 ? 'col-md-12 bg-warning': condition[0]==2?'col-md-12 bg-danger':'col-md-12'">
+                                {{answers[0]}}</output>
+                        </td>
+                        <td>
+                            <span class="edit" *ngIf="areVisible[0]">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="onClick(1)">Accept</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="13"></td>
+                        <td colspan="13">
+                            <div class="form-group" *ngIf="visible">
+                                <button class="btn btn-success btn-lg btn-block" (click)="nextGame()">Sledeca
+                                    igra</button>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+
+
+            </form>
+
+        </div>
+    </div><!-- form card register -->
+
+    <div class="form-group col-md-1">
+
+    </div>
+    <div class="form-group col-md-2 ">
+        <br /> <br /><br />
+        <div class="form-group">
+            <h3>Poeni:{{points}}</h3>
+        </div>
+
+        <div class="form-group">
+            <h5 class="form-control" *ngIf="visibleT">{{timer}}</h5>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,75 @@
+<div><a [routerLink]="" (click)="onLogout()">Logout</a></div>
+<div><a [routerLink]="" (click)="onAdmin()">Back</a></div>
+
+
+<div class="container">
+    <!-- No data message >
+    <p *ngIf="goblet==null" class="no-data text-center">There is no requests yet!</p-->
+
+    <!-- Employee list -->
+    <table class="table table-bordered" >
+        <thead class="table-success">
+            <tr>
+                <th scope="col">Question</th>
+                <th scope="col">Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{goblet.tQuestion7}}</td>
+                <td>{{goblet.tAnswer7}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.tQuestion6}}</td>
+                <td>{{goblet.tAnswer6}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.tQuestion5}}</td>
+                <td>{{goblet.tAnswer5}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.tQuestion4}}</td>
+                <td>{{goblet.tAnswer4}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.tQuestion3}}</td>
+                <td>{{goblet.tAnswer3}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.tQuestion2}}</td>
+                <td>{{goblet.tAnswer2}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.tQuestion1}}</td>
+                <td>{{goblet.tAnswer1}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.bQuestion2}}</td>
+                <td>{{goblet.bAnswer2}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.bQuestion3}}</td>
+                <td>{{goblet.bAnswer3}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.bQuestion4}}</td>
+                <td>{{goblet.bAnswer4}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.bQuestion5}}</td>
+                <td>{{goblet.bAnswer5}}</td>
+            </tr>
+
+            <tr>
+                <td>{{goblet.bQuestion6}}</td>
+                <td>{{goblet.bAnswer6}}</td>
+            </tr>
+            <tr>
+                <td>{{goblet.bQuestion7}}</td>
+                <td>{{goblet.bAnswer7}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

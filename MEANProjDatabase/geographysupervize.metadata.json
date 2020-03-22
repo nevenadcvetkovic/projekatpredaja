@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"MEANProjDatabase.geographysupervize"}],"uuid":"959e817d9a974272833e7d0b8f7c8cee"}

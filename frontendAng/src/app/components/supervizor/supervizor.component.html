@@ -1,0 +1,415 @@
+<div class="left-content-center">
+    <a [routerLink]="" (click)="onLogout()">Logout</a>
+</div>
+<div>
+    <a [routerLink]="" (click)="validateG()">Validate the terms for interesting georaphy</a>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h3 class="left-content-center caption">Insert an anagram</h3>
+        <div class="row left-content-center">
+            <div class="col">
+                <!-- form card register -->
+                <div class="card-body">
+                    <form [formGroup]="supervizorAnagramForm" (ngSubmit)="onAnagramSubmit()">
+
+                        <div class="form-group">
+                            <label for="inputPuzzle">Anagram</label>
+                            <input class="form-control" type="text" formControlName="puzzle">
+                            <!-- error -->
+                            <div class="invalid-feedback" *ngIf="submittedA && myForm.puzzle.errors?.required">
+                                You have to enter an anagram!
+                            </div>
+                            <div class="invalid-feedback" *ngIf="submittedA && myForm.puzzle.errors?.pattern">
+                                Enter Letters Only
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputSolution" class="control-label">Solution</label>
+                            <input type="text" class="form-control" formControlName="solution"
+                                title="Please enter your solution">
+                            <p class="invalid-feedback" *ngIf="submittedA && myForm.solution.errors?.required">
+                                You have to enter a solution!</p>
+                            <div class="invalid-feedback" *ngIf="submittedA && myForm.solution.errors?.pattern">
+                                Enter Letters Only
+                            </div>
+                        </div>
+                        <div class="form-group alert">
+                            <output *ngIf="visibleA">{{message}}</output>
+
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-success btn-lg btn-block" type="submit">Save</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div><!-- form card register -->
+        </div>
+
+        <h3 class="left-content-center">Make a new table 5x5</h3>
+        <div class="row left-content-center">
+            <div class="col">
+                <!-- form card register -->
+                <div class="card-body">
+                    <form [formGroup]="supervizorTable55Form" (ngSubmit)="onTable55Submit()">
+
+                        <div class="form-group">
+                            <label for="inputHc1">Word</label>
+                            <input class="form-control" type="text" formControlName="hc1">
+                            <!-- error -->
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc1.errors?.required">
+                                You have to enter the word!
+                            </div>
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc1.errors?.pattern">
+                                Enter Letters Only
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputHc2">Word</label>
+                            <input class="form-control" type="text" formControlName="hc2">
+                            <!-- error -->
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc2.errors?.required">
+                                You have to enter the word!
+                            </div>
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc2.errors?.pattern">
+                                Enter Letters Only
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputHc3">Word</label>
+                            <input class="form-control" type="text" formControlName="hc3">
+                            <!-- error -->
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc3.errors?.required">
+                                You have to enter the word!
+                            </div>
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc3.errors?.pattern">
+                                Enter Letters Only
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputHc4">Word</label>
+                            <input class="form-control" type="text" formControlName="hc4">
+                            <!-- error -->
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc4.errors?.required">
+                                You have to enter the word!
+                            </div>
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc4.errors?.pattern">
+                                Enter Letters Only
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputHc5">Word</label>
+                            <input class="form-control" type="text" formControlName="hc5">
+                            <!-- error -->
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc5.errors?.required">
+                                You have to enter the word!
+                            </div>
+                            <div class="invalid-feedback" *ngIf="submittedT && myFormT.hc5.errors?.pattern">
+                                Enter Letters Only
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-success btn-lg btn-block" type="submit">Save</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div><!-- form card register -->
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+        <h3 class="justify-content-center">Insert a goblet</h3>
+        <div class="row right-content-center">
+            <div class="col register-employee">
+                <!-- form card register -->
+                <div class="card-body">
+                    <form [formGroup]="supervizorGobletForm" (ngSubmit)="onGobletSubmit()">
+                        <div class="row form-group">
+                            <div class="col">
+                                <label class="caption">Question</label>
+                            </div>
+                            <div class="col">
+                                <label class="caption">Answer</label>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="tQuestion7">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tQuestion7.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="tAnswer7"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer7.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer7.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="tQuestion6">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tQuestion6.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="tAnswer6"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer6.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer6.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="tQuestion5">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tQuestion5.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="tAnswer5"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer5.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer5.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="tQuestion4">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tQuestion4.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="tAnswer4"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer4.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer4.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="tQuestion3">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tQuestion3.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="tAnswer3"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer3.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer3.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="tQuestion2">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tQuestion2.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="tAnswer2"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer2.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer2.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="tQuestion1">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tQuestion1.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="tAnswer1"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer1.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.tAnswer1.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="bQuestion2">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bQuestion2.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="bAnswer2"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer2.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer2.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="bQuestion3">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bQuestion3.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="bAnswer3"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer3.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer3.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="bQuestion4">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bQuestion4.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="bAnswer4"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer4.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer4.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="bQuestion5">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bQuestion5.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="bAnswer5"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer5.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer5.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="bQuestion6">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bQuestion6.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="bAnswer6"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer6.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer6.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <input class="form-control" type="text" formControlName="bQuestion7">
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bQuestion7.errors?.required">
+                                    You have to enter the Question!
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" formControlName="bAnswer7"
+                                    title="Please enter your answer">
+                                <p class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer7.errors?.required">
+                                    You have to enter an answer!</p>
+                                <div class="invalid-feedback" *ngIf="submittedG && myFormG.bAnswer7.errors?.pattern">
+                                    Enter Letters Only
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group alert">
+                            <output *ngIf="visibleG">{{message}}</output>
+
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-success btn-lg btn-block" type="submit">Save</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div><!-- form card register -->
+        </div>
+
+    </div>
+</div>

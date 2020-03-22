@@ -1,0 +1,161 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+        <!-- form card register -->
+        <div class="card-body">
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input class="form-control" type="text" formControlName="name">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                        Name is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSurname">Surname</label>
+                    <input class="form-control" type="text" formControlName="surname">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.surname.errors?.required">
+                        Surname is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input class="form-control" type="text" formControlName="email">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.required">
+                        Enter your email.
+                    </div>
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.pattern">
+                        Enter valid email.
+                    </div>
+                </div>
+
+                <!-->div class="form-group">
+                    <label for="inputUserType">Type</label>
+                    <select class="custom-select form-control" formControlName="userType">
+                        <option value="">Choose...</option>
+                        <option *ngFor="let userTypes of UserTypes" value="{{userTypes}}">{{userTypes}}
+                        </option>
+                    </select>
+                    <!-- error -->
+                <!-->div class="invalid-feedback" *ngIf="submitted && myForm.userType.errors?.required">
+                        Choose type.
+                    </div>
+                </div-->
+                <div class="form-group">
+                    <label for="inputSurname">Vocation</label>
+                    <input class="form-control" type="text" formControlName="vocation">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.vocation.errors?.required">
+                        Vocation is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input class="form-control" type="text" formControlName="username">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.username.errors?.required">
+                        Username is required.
+                    </div>
+                </div>
+
+                <!-->div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input class="form-control" type="password" formControlName="password">
+                    <!-- error -->
+                <!-->div class="invalid-feedback" *ngIf="submitted && myForm.password.errors?.required">
+                        Password is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label for="inputPassword">Repeat password</label>
+                        <input class="form-control" type="password" formControlName="passwordRepeat" >
+                        <!-- error -->
+                <!-->div class="invalid-feedback" *ngIf="submitted && myForm.passwordRepeat.errors?.required">
+                            You have to repeat the password!
+                        </div>
+                </div-->
+                <div class="form-group">
+                    <label for="inputPassword" class="control-label">Password</label>
+                    <input type="password" class="form-control" formControlName="password"
+                        title="Please enter your password">
+                    <p class="help-block"
+                        *ngIf="userForm.get('password').hasError('required') && userForm.get('password').touched">
+                        You have to enter a password!</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmedPassword" class="control-label">Confirm password:</label>
+                    <input type="password" class="form-control" formControlName="passwordRepeat"
+                        title="Please re-enter your password">
+                    <p class="help-block"
+                        *ngIf="userForm.get('passwordRepeat').hasError('required') && userForm.get('passwordRepeat').touched">
+                        You have to confirm your password!</p>
+                    <p class="help-block"
+                        *ngIf="userForm.get('passwordRepeat').hasError('passwordMismatch') && userForm.get('passwordRepeat').touched">
+                        The passwords don't match!</p>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="inputGender">Gender</label>
+                    <div class="custom-radio form-check">
+
+                        <input type="radio" id="male" class="custom-control-input" name="gender"
+                            formControlName="gender" value="0">
+                        <label class="custom-control-label" for="male">Male</label>
+                    </div>
+
+                    <div class="custom-radio form-check">
+                        <input type="radio" id="female" class="custom-control-input" name="gender"
+                            formControlName="gender" value="1">
+                        <label class="custom-control-label" for="female">Female</label>
+                    </div>
+
+
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.gender.errors?.required">
+                        Gender required!
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="inputJMBG">JMBG</label>
+                    <input class="form-control" type="text" formControlName="JMBG">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.JMBG.errors?.required">
+                        JMBG required!
+                    </div>
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.JMBG.errors?.pattern">
+                        Enter Numbers Only
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputSecretQestion">Secret question</label>
+                    <input class="form-control" type="text" formControlName="secretQuestion">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.secretQuestion.errors?.required">
+                        You have to write a secret question.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputSecret">Secret answer</label>
+                    <input class="form-control" type="text" formControlName="secretAnswer">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.secretAnswer.errors?.required">
+                        You have to write a secret question.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-success btn-lg btn-block" type="submit">Register</button>
+                </div>
+            </form>
+
+        </div>
+    </div><!-- form card register -->
+</div>

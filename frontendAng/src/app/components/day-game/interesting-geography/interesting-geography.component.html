@@ -1,0 +1,72 @@
+<div class="left-content-center">
+    <a [routerLink]="" (click)="home()">Home</a>
+</div>
+<div class="left-content-center">
+    <a [routerLink]="" (click)="onLogout()">Logout</a>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-5 register-employee">
+        <!-- form card register -->
+        <div class="card-body">
+            <h1>Zanimljiva geografija</h1>
+            <form [formGroup]="geographyForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Država" formControlName="country">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Grad" formControlName="city">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Jezero" formControlName="lake">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Planina" formControlName="mountain">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Reka" formControlName="river">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Životinja" formControlName="animal">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Biljka" formControlName="plant">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Muzička grupa" formControlName="band">
+                </div>
+
+                <div class="form-group" *ngIf="!visibleI">
+                <button class=" btn btn-success btn-lg btn-block" type="submit">Potvrdi</button>
+                </div>
+                <div *ngIf="visibleI">
+                    <button class="btn btn-success btn-lg btn-block" (click)="clearMyInterval()">Stop</button>
+                </div>
+                <br />
+                <div class="form-group" *ngIf="visible">
+                    <button class="btn btn-success btn-lg btn-block" (click)="nextGame()">Sledeca igra</button>
+                </div>
+
+                <div *ngIf="waitFlag">
+                    <output class="form-control form-control-lg">{{message}}</output>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div><!-- form card register -->
+    <div class="form-group col-md-2">
+        <br /> <br /><br /><br /><br/>
+        <h3><output class="form-control form-control-lg">{{letter}}</output></h3>
+    </div>
+    <div class="form-group col-md-5 ">
+        <br /> <br /><br />
+        <div class="form-group">
+            <h3>Poeni:{{points}}</h3>
+        </div>
+
+        <div class="form-group">
+            <h5 class="form-control" *ngIf="visibleT">{{timer}}</h5>
+        </div>
+    </div>
+</div>

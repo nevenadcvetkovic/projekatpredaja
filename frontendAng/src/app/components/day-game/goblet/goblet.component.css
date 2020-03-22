@@ -1,0 +1,13 @@
+.table td {
+    text-align: center;   
+ }
+
+ table.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.border-black
+{
+border:black solid 1px !important;
+}

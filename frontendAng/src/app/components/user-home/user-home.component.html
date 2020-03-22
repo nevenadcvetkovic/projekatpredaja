@@ -1,0 +1,31 @@
+<div>
+    <a [routerLink]="" (click)="navigate()">Start a new day game</a>
+</div>
+<div>
+    <a [routerLink]="" (click)="onLogout()">Logout</a>
+</div>
+
+<div class="container">
+    <!-- No data message -->
+    <p *ngIf="last20.length <= 0" class="no-data text-center">There is no games played yet!</p>
+
+    <!-- Employee list -->
+    <table class="table table-striped table-bordered " *ngIf="last20.length > 0">
+        <thead class="table-success">
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Username</th>
+                <th scope="col">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let game of last20; let i = index">
+
+
+                <td>{{game.date}}</td>
+                <td>{{game.username}}</td>
+                <td>{{game.points}}</td>
+
+            </tr>
+        </tbody>
+    </table>
